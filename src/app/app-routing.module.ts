@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './core/auth-guard.service';
 
 const routes: Routes = [
   { 
     path: 'admin',
-    loadChildren: () => import('./feature/admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('./feature/admin/admin.module').then(m => m.AdminModule),
+    canLoad: [AuthGuardService]
   },
   { 
     path: '',
-    loadChildren: () => import('./feature/general/general.module').then(m => m.GeneralModule)
+    loadChildren: () => import('./feature/general/general.module').then(m => m.GeneralModule),
+    canLoad: [AuthGuardService]
   },
 ];
 
