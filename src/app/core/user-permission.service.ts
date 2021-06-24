@@ -7,7 +7,9 @@ export class UserPermissionService {
 
   isAdmin(): boolean {
     if(!this.isAdminValue) {
-      this.isAdminValue = Math.random() % 2 === 0;
+      const num = Math.floor(Math.random() * 100) + 1;
+      console.log('Random number', num);
+      this.isAdminValue = num % 2 === 0;
     }
     return this.isAdminValue;
   }
