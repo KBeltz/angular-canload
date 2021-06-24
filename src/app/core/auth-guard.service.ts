@@ -1,3 +1,7 @@
+import { Injectable } from "@angular/core";
+import { CanLoad, Route } from "@angular/router";
+import { UserPermissionService } from "./user-permission.service";
+
 @Injectable({ providedIn: 'root' })
 export class AuthGuardService implements CanLoad {
   unauthorised: string = 'You are not authorised to visit this page'
