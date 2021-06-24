@@ -13,7 +13,7 @@ export class AuthGuardService implements CanLoad {
     if(route.path.includes('admin')) {
       !isAdmin && alert(this.unauthorised);
       return isAdmin;
-    } else if(route.path.includes('record-list')) {
+    } else if(route.path.includes('general')) {
       isAdmin && alert(this.unauthorised);
       return !isAdmin;
     }

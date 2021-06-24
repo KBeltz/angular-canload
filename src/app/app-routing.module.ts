@@ -9,7 +9,7 @@ const routes: Routes = [
     canLoad: [AuthGuardService]
   },
   { 
-    path: '',
+    path: 'general',
     loadChildren: () => import('./feature/general/general.module').then(m => m.GeneralModule),
     canLoad: [AuthGuardService]
   },
